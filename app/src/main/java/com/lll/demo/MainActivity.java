@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.android.support.design.SupportDesignDemos;
+import com.example.android.supportv13.Support13Demos;
 import com.example.android.supportv4.Support4Demos;
 import com.example.android.supportv7.Support7Demos;
 
@@ -78,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void goV7(View view) {
         Intent intent = new Intent(this, Support7Demos.class);
+        startActivity(intent);
+    }
+    public void goV13(View view) {
+        Intent intent = new Intent(this, Support13Demos.class);
         startActivity(intent);
     }
     public void goDesign(View view) {
