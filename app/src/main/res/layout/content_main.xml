@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.lll.demo.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hello JNI!" />
+
+    <Button
+        android:id="@+id/btn_api"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goAPIDemo"
+        android:text="APIDemo"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btn_v4"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:onClick="goV4"
+        android:text="supportV4"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btn_v7"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goV7"
+        android:text="supportV7"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btn_v13"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goV13"
+        android:text="supportV13"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btn_design"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goDesign"
+        android:text="supportDesign"
+        android:textColor="@color/colorAccent" />
+
+</LinearLayout>
