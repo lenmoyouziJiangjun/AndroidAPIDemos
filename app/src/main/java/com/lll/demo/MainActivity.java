@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.android.apis.ApiDemos;
 import com.example.android.support.design.SupportDesignDemos;
 import com.example.android.supportv13.Support13Demos;
 import com.example.android.supportv4.Support4Demos;
@@ -81,12 +82,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Support7Demos.class);
         startActivity(intent);
     }
+
     public void goV13(View view) {
         Intent intent = new Intent(this, Support13Demos.class);
         startActivity(intent);
     }
+
     public void goDesign(View view) {
         Intent intent = new Intent(this, SupportDesignDemos.class);
+        startActivity(intent);
+    }
+
+    public void goAPIDemo(View view) {
+        Intent intent = new Intent(this, ApiDemos.class);
         startActivity(intent);
     }
 }
