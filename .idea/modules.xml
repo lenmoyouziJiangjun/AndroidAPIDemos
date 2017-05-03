@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidDemos.iml" filepath="$PROJECT_DIR$/AndroidDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/apidemo/apidemo.iml" filepath="$PROJECT_DIR$/apidemo/apidemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/supportdesign/supportdesign.iml" filepath="$PROJECT_DIR$/supportdesign/supportdesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportdesigndemo/supportdesigndemo.iml" filepath="$PROJECT_DIR$/supportdesigndemo/supportdesigndemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv13demo/supportv13demo.iml" filepath="$PROJECT_DIR$/supportv13demo/supportv13demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv4demo/supportv4demo.iml" filepath="$PROJECT_DIR$/supportv4demo/supportv4demo.iml" />
