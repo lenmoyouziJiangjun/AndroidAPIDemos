@@ -1,0 +1,45 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lll.supportotherdemos">
+
+    <application android:allowBackup="true"
+        android:supportsRtl="true">
+
+
+        <activity android:name=".SupportOtherDemos">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".transition.SceneUsage"
+            android:label="@string/scene"
+            android:theme="@style/Theme.Transition">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.transition.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".transition.CustomUsage"
+            android:label="@string/custom"
+            android:theme="@style/Theme.Transition">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.transition.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".transition.BeginDelayedUsage"
+            android:label="@string/beginDelayed"
+            android:theme="@style/Theme.Transition">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.transition.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

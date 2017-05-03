@@ -16,10 +16,13 @@
 
 package android.support.transition;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.support.annotation.RequiresApi;
-import android.view.LayoutInflater;
+import android.os.Build;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.R;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -30,19 +33,21 @@ import android.view.ViewGroup;
  * animate the various property changes that take place during the
  * scene change.
  */
-@RequiresApi(14)
-@TargetApi(14)
-final class ScenePort {
+public class Scene {
 
-    Runnable mEnterAction, mExitAction;
+    private static SceneStaticsImpl sImpl;
 
-    private Context mContext;
+    static {
+        if (Build.VERSION.SDK_INT >= 21) {
+            sImpl = new SceneStaticsApi21();
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            sImpl = new SceneStaticsKitKat();
+        } else {
+            sImpl = new SceneStaticsIcs();
+        }
+    }
 
-    private int mLayoutId = -1;
-
-    private ViewGroup mSceneRoot;
-
-    private View mLayout; // alternative to layoutId
+    /* package */ SceneImpl mImpl;
 
     /**
      * Constructs a Scene with no information about how values will change
@@ -54,29 +59,9 @@ final class ScenePort {
      * @param sceneRoot The root of the hierarchy in which scene changes
      *                  and transitions will take place.
      */
-    public ScenePort(ViewGroup sceneRoot) {
-        mSceneRoot = sceneRoot;
-    }
-
-    /**
-     * Constructs a Scene which, when entered, will remove any
-     * children from the sceneRoot container and will inflate and add
-     * the hierarchy specified by the layoutId resource file.
-     *
-     * <p>This method is hidden because layoutId-based scenes should be
-     * created by the caching factory method {@link ScenePort#getCurrentScene(View)}.</p>
-     *
-     * @param sceneRoot The root of the hierarchy in which scene changes
-     *                  and transitions will take place.
-     * @param layoutId  The id of a resource file that defines the view
-     *                  hierarchy of this scene.
-     * @param context   The context used in the process of inflating
-     *                  the layout resource.
-     */
-    private ScenePort(ViewGroup sceneRoot, int layoutId, Context context) {
-        mContext = context;
-        mSceneRoot = sceneRoot;
-        mLayoutId = layoutId;
+    public Scene(@NonNull ViewGroup sceneRoot) {
+        mImpl = createSceneImpl();
+        mImpl.init(sceneRoot);
     }
 
     /**
@@ -89,14 +74,22 @@ final class ScenePort {
      * @param layout    The view hierarchy of this scene, added as a child
      *                  of sceneRoot when this scene is entered.
      */
-    public ScenePort(ViewGroup sceneRoot, View layout) {
-        mSceneRoot = sceneRoot;
-        mLayout = layout;
+    public Scene(@NonNull ViewGroup sceneRoot, @NonNull View layout) {
+        mImpl = createSceneImpl();
+        mImpl.init(sceneRoot, layout);
+    }
+
+    private Scene(SceneImpl scene) {
+        mImpl = scene;
     }
 
     /**
      * Returns a Scene described by the resource file associated with the given
-     * <code>layoutId</code> parameter.
+     * <code>layoutId</code> parameter. If such a Scene has already been created for
+     * the given <code>sceneRoot</code>, that same Scene will be returned.
+     * This caching of layoutId-based scenes enables sharing of common scenes
+     * between those created in code and those referenced by {@link TransitionManager}
+     * XML resource files.
      *
      * @param sceneRoot The root of the hierarchy in which scene changes
      *                  and transitions will take place.
@@ -105,32 +98,34 @@ final class ScenePort {
      *                  the layout resource.
      * @return The scene for the given root and layout id
      */
-    public static ScenePort getSceneForLayout(ViewGroup sceneRoot, int layoutId, Context context) {
-        // We don't cache ScenePort, but android.support.transition.Scene.
-        return new ScenePort(sceneRoot, layoutId, context);
+    @NonNull
+    public static Scene getSceneForLayout(@NonNull ViewGroup sceneRoot, @LayoutRes int layoutId,
+            @NonNull Context context) {
+        @SuppressWarnings("unchecked")
+        SparseArray<Scene> scenes =
+                (SparseArray<Scene>) sceneRoot.getTag(R.id.transition_scene_layoutid_cache);
+        if (scenes == null) {
+            scenes = new SparseArray<>();
+            sceneRoot.setTag(R.id.transition_scene_layoutid_cache, scenes);
+        }
+        Scene scene = scenes.get(layoutId);
+        if (scene != null) {
+            return scene;
+        } else {
+            scene = new Scene(sImpl.getSceneForLayout(sceneRoot, layoutId, context));
+            scenes.put(layoutId, scene);
+            return scene;
+        }
     }
 
-    /**
-     * Set the scene that the given view is in. The current scene is set only
-     * on the root view of a scene, not for every view in that hierarchy. This
-     * information is used by Scene to determine whether there is a previous
-     * scene which should be exited before the new scene is entered.
-     *
-     * @param view The view on which the current scene is being set
-     */
-    static void setCurrentScene(View view, ScenePort scene) {
-        view.setTag(R.id.transition_current_scene, scene);
-    }
-
-    /**
-     * Gets the current {@link ScenePort} set on the given view. A scene is set on a view
-     * only if that view is the scene root.
-     *
-     * @return The current Scene set on this view. A value of null indicates that
-     * no Scene is currently set.
-     */
-    static ScenePort getCurrentScene(View view) {
-        return (ScenePort) view.getTag(R.id.transition_current_scene);
+    private SceneImpl createSceneImpl() {
+        if (Build.VERSION.SDK_INT >= 21) {
+            return new SceneApi21();
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            return new SceneKitKat();
+        } else {
+            return new SceneIcs();
+        }
     }
 
     /**
@@ -140,8 +135,9 @@ final class ScenePort {
      *
      * @return The root of the view hierarchy affected by this scene.
      */
+    @NonNull
     public ViewGroup getSceneRoot() {
-        return mSceneRoot;
+        return mImpl.getSceneRoot();
     }
 
     /**
@@ -152,11 +148,7 @@ final class ScenePort {
      * if there is one.
      */
     public void exit() {
-        if (getCurrentScene(mSceneRoot) == this) {
-            if (mExitAction != null) {
-                mExitAction.run();
-            }
-        }
+        mImpl.exit();
     }
 
     /**
@@ -167,28 +159,10 @@ final class ScenePort {
      * an {@link #setEnterAction(Runnable)} enter action}, or a
      * combination of the these. No transition will be run when the
      * scene is entered. To get transition behavior in scene changes,
-     * use one of the methods in {@link TransitionManagerPort} instead.
+     * use one of the methods in {@link android.support.transition.TransitionManager} instead.
      */
     public void enter() {
-
-        // Apply layout change, if any
-        if (mLayoutId > 0 || mLayout != null) {
-            // empty out parent container before adding to it
-            getSceneRoot().removeAllViews();
-
-            if (mLayoutId > 0) {
-                LayoutInflater.from(mContext).inflate(mLayoutId, mSceneRoot);
-            } else {
-                mSceneRoot.addView(mLayout);
-            }
-        }
-
-        // Notify next scene that it is entering. Subclasses may override to configure scene.
-        if (mEnterAction != null) {
-            mEnterAction.run();
-        }
-
-        setCurrentScene(mSceneRoot, this);
+        mImpl.enter();
     }
 
     /**
@@ -206,11 +180,10 @@ final class ScenePort {
      * @param action The runnable whose {@link Runnable#run() run()} method will
      *               be called when this scene is entered
      * @see #setExitAction(Runnable)
-     * @see ScenePort#ScenePort(ViewGroup, int, Context)
-     * @see ScenePort#ScenePort(ViewGroup, ViewGroup)
+     * @see Scene(ViewGroup, ViewGroup)
      */
-    public void setEnterAction(Runnable action) {
-        mEnterAction = action;
+    public void setEnterAction(@Nullable Runnable action) {
+        mImpl.setEnterAction(action);
     }
 
     /**
@@ -227,20 +200,10 @@ final class ScenePort {
      * if an enter action is set.
      *
      * @see #setEnterAction(Runnable)
-     * @see ScenePort#ScenePort(ViewGroup, int, Context)
-     * @see ScenePort#ScenePort(ViewGroup, ViewGroup)
+     * @see Scene(ViewGroup, ViewGroup)
      */
-    public void setExitAction(Runnable action) {
-        mExitAction = action;
+    public void setExitAction(@Nullable Runnable action) {
+        mImpl.setExitAction(action);
     }
 
-
-    /**
-     * Returns whether this Scene was created by a layout resource file, determined
-     * by the layoutId passed into
-     * {@link #getSceneForLayout(ViewGroup, int, Context)}.
-     */
-    boolean isCreatedFromLayoutResource() {
-        return (mLayoutId > 0);
-    }
 }

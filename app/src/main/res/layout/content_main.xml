@@ -65,4 +65,13 @@
         android:text="supportDesign"
         android:textColor="@color/colorAccent" />
 
+    <Button
+        android:id="@+id/btn_other"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goOtherDemo"
+        android:text="supportOtherDemos"
+        android:textColor="@color/colorAccent" />
+
 </LinearLayout>

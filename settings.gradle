@@ -1,1 +1,1 @@
-include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportdesign'
+include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportsource', ':supportotherdemos'
