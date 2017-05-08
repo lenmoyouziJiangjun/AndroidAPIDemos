@@ -33,6 +33,7 @@ public class CustomUsage extends SceneUsageBase {
     @TargetApi(19)
     @Override
     void go(Scene scene) {
+
         TransitionManager.go(scene, mTransition);
     }
 }

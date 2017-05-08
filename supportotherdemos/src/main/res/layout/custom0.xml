@@ -21,25 +21,31 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <View
+    <TextView
         android:id="@+id/view_1"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="tv_1"
         android:background="#f00"/>
 
-    <View
+    <TextView
         android:id="@+id/view_2"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="tv_2"
         android:background="#0f0"/>
 
-    <View
+    <TextView
         android:id="@+id/view_3"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="tv_3"
         android:background="#00f"/>
 
 </LinearLayout>

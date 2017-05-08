@@ -38,7 +38,8 @@ public class ChangeColor extends Transition {
     }
 
     /**
-     * 创建更改背景颜色的动画
+     * 重写父类创建动画的方法，实现自定义的更改背景颜色的动画
+     *
      *
      * @param sceneRoot
      * @param startValues
