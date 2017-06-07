@@ -34,10 +34,10 @@ public class LruCache<K, V> {
     private int maxSize;
 
     private int putCount;
-    private int createCount;
+    private int createCount;//默认创建的次数
     private int evictionCount;
-    private int hitCount;
-    private int missCount;
+    private int hitCount;//找到次数
+    private int missCount;//没找到次数
 
     /**
      * @param maxSize for caches that do not override {@link #sizeOf}, this is
@@ -96,7 +96,7 @@ public class LruCache<K, V> {
          * the map and release the created value.
          */
 
-        V createdValue = create(key);
+        V createdValue = create(key);//没找到，提供一个默认的值
         if (createdValue == null) {
             return null;
         }

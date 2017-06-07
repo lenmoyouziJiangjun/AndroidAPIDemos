@@ -22,7 +22,6 @@ import android.net.Uri;
 import android.os.Environment;
 import android.os.FileUtils;
 import android.os.SystemClock;
-import android.support.v4.provider.DocumentFile;
 import android.test.AndroidTestCase;
 
 import java.io.DataInputStream;
