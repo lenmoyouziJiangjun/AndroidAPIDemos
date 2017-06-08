@@ -20,6 +20,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".basicmediarouter.BasicMediaRouterActivity"
+            android:label="@string/media_decoder"
+            android:theme="@style/Theme.Media">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.media.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
