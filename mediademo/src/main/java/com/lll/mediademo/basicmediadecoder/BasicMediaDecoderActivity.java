@@ -39,6 +39,14 @@ public class BasicMediaDecoderActivity extends Activity {
         setContentView(R.layout.activity_media_decoder);
         mPlaybackView = (TextureView) findViewById(R.id.PlaybackView);
         mAttribView = (TextView) findViewById(R.id.AttribView);
+        findViewById(R.id.btn_play).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAttribView.setVisibility(View.VISIBLE);
+                startPlayback();
+                view.setVisibility(View.GONE);
+            }
+        });
     }
 
     @Override
@@ -64,8 +72,6 @@ public class BasicMediaDecoderActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_play) {
-            mAttribView.setVisibility(View.VISIBLE);
-            startPlayback();
             item.setEnabled(false);
         }
         return true;

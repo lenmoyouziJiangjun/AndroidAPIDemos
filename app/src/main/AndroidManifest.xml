@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.lll.demo">
     <!--权限配置都应该放在这里-->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -37,6 +38,11 @@
         android:name="android.hardware.camera.autofocus"
         android:required="false" />
 
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="25"
+        tools:overrideLibrary="com.lll.mediademo" />
 
     <application
         android:allowBackup="true"

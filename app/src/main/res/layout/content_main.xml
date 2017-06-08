@@ -74,4 +74,13 @@
         android:text="supportOtherDemos"
         android:textColor="@color/colorAccent" />
 
+    <Button
+        android:id="@+id/btn_media"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goMedia"
+        android:text="MediaDemos"
+        android:textColor="@color/colorAccent" />
+
 </LinearLayout>

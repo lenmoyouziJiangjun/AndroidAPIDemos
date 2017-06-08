@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  Copyright (C) 2013 The Android Open Source Project
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,21 +14,29 @@
  limitations under the License.
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-    >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
     <TextureView
         android:id="@+id/PlaybackView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="play" />
+
     <TextView
-            android:id="@+id/AttribView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
-            android:visibility="gone"
-            android:textColor="@android:color/holo_blue_bright"
-            android:text="@string/app_video_attrib"/>
+        android:id="@+id/AttribView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:text="@string/app_video_attrib"
+        android:textColor="@android:color/holo_blue_bright"
+        android:visibility="gone" />
 </FrameLayout>
 

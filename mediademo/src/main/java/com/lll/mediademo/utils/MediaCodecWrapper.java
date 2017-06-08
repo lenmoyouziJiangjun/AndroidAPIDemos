@@ -73,10 +73,12 @@ public class MediaCodecWrapper {
     }
 
     public void stopAndRelease() {
-        mDecoder.stop();
-        mDecoder.release();
-        mDecoder = null;
-        mHandler = null;
+        if (mDecoder != null) {
+            mDecoder.stop();
+            mDecoder.release();
+            mDecoder = null;
+            mHandler = null;
+        }
     }
 
     /**

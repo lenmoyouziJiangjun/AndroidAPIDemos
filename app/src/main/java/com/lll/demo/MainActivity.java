@@ -16,6 +16,7 @@ import com.example.android.support.design.SupportDesignDemos;
 import com.example.android.supportv13.Support13Demos;
 import com.example.android.supportv4.Support4Demos;
 import com.example.android.supportv7.Support7Demos;
+import com.lll.mediademo.MediaDemos;
 import com.lll.supportotherdemos.SupportOtherDemos;
 
 public class MainActivity extends AppCompatActivity {
@@ -101,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goOtherDemo(View view) {
         Intent intent = new Intent(this, SupportOtherDemos.class);
+        startActivity(intent);
+    }
+
+    public void goMedia(View view) {
+        Intent intent = new Intent(this, MediaDemos.class);
         startActivity(intent);
     }
 }
