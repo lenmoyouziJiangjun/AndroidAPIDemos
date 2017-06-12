@@ -8,6 +8,5 @@
         android:id="@+id/spherical_video_player"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#eee"
         android:visibility="gone" />
 </FrameLayout>

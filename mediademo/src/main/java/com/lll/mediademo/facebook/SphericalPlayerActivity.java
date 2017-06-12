@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.TextureView;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -28,7 +29,7 @@ import java.io.InputStreamReader;
  */
 public class SphericalPlayerActivity extends AppCompatActivity {
 
-    private final String SAMPLE_VIDEO_PATH = "android.resource://com.oculus.sample/raw/" + R.raw.sample360;
+    private static String SAMPLE_VIDEO_PATH;
 
     private static final int PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 0x1;
 
@@ -39,9 +40,13 @@ public class SphericalPlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook);
 
+        SAMPLE_VIDEO_PATH = "android.resource://" + getPackageName() + "/raw/" + R.raw.sample360;
+//        SAMPLE_VIDEO_PATH = "android.resource://com.lll.demo/raw/" + R.raw.sample360;
+
         mVideoPlayer = (SphericalVideoPlayer) findViewById(R.id.spherical_video_player);
         mVideoPlayer.setVideoURLPath(SAMPLE_VIDEO_PATH);
         mVideoPlayer.playWhenReady();
+
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -98,7 +103,7 @@ public class SphericalPlayerActivity extends AppCompatActivity {
 
             }
         });
-        mVideoPlayer.setVideoURLPath(VIBRATOR_SERVICE);
+        mVideoPlayer.setVisibility(View.VISIBLE);
     }
 
     public static String readRawTextFile(Context context, int resId) {

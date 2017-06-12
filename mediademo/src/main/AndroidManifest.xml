@@ -22,7 +22,7 @@
 
         <activity
             android:name=".basicmediarouter.BasicMediaRouterActivity"
-            android:label="@string/media_decoder"
+            android:label="@string/media_router"
             android:theme="@style/Theme.Media">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +31,8 @@
         </activity>
 
         <activity
-            android:name=".basicmediarouter.BasicMediaRouterActivity"
-            android:label="@string/media_decoder"
+            android:name=".facebook.SphericalPlayerActivity"
+            android:label="@string/facebook_360_Video_Player"
             android:theme="@style/Theme.Media">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

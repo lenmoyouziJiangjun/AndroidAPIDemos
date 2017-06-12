@@ -102,7 +102,7 @@ public class SphericalVideoPlayer extends TextureView {
     }
 
     private void prepareVideo(String videoPath) {
-        if (mRenderThread != null) {
+        if (mRenderThread == null) {
             throw new IllegalStateException("RenderThread has not been initialized");
         }
         if (TextUtils.isEmpty(videoPath)) {
