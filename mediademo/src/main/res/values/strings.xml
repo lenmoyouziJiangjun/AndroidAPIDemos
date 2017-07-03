@@ -16,4 +16,6 @@
     <string name="media_decoder">basicMediaDecoder</string>
     <string name="media_router">basicMediaRouter</string>
     <string name="facebook_360_Video_Player">360VideoPlayer</string>
+    <string name="media_recorder">MediaRecorder</string>
+    <string name="screen_capture">ScreenCapture</string>
 </resources>
