@@ -42,7 +42,8 @@
     <uses-sdk
         android:minSdkVersion="21"
         android:targetSdkVersion="25"
-        tools:overrideLibrary="com.lll.mediademo" />
+        tools:overrideLibrary="com.lll.mediademo"
+         />
 
     <application
         android:allowBackup="true"

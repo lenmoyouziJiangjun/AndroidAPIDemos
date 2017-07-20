@@ -1,44 +1,168 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lll.supportotherdemos">
 
-    <application android:allowBackup="true"
+    <application
+        android:allowBackup="true"
         android:supportsRtl="true">
 
 
         <activity android:name=".SupportOtherDemos">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
-        <activity android:name=".transition.SceneUsage"
+        <activity
+            android:name=".transition.SceneUsage"
             android:label="@string/scene"
             android:theme="@style/Theme.Transition">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.example.android.support.transition.SAMPLE_CODE" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".transition.CustomUsage"
+        <activity
+            android:name=".transition.CustomUsage"
             android:label="@string/custom"
             android:theme="@style/Theme.Transition">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.example.android.support.transition.SAMPLE_CODE" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".transition.BeginDelayedUsage"
+        <activity
+            android:name=".transition.BeginDelayedUsage"
             android:label="@string/beginDelayed"
             android:theme="@style/Theme.Transition">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.example.android.support.transition.SAMPLE_CODE" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <!--navigation-->
+        <activity
+            android:name=".appNavigation.ViewFromOtherTaskActivity"
+            android:label="Navigation/ViewFromOtherTask"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".appNavigation.NotificationsActivity"
+            android:label="Navigation/NotificationsActivity"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".appNavigation.InterstitialMessageActivity"
+            android:label="InterstitialMessageActivity"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".appNavigation.ContentCategoryActivity"
+            android:label="Navigation/ContentCategoryActivity"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".appNavigation.ContentViewActivity"
+            android:label="Navigation/ContentViewActivity"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".appNavigation.OutsideTaskActivity"
+            android:label="Navigation/OutsideTaskActivity"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".appNavigation.PeerActivity"
+            android:label="Navigation/PeerActivity"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".appNavigation.SimpleUpActivity"
+            android:label="Navigation/SimpleUpActivity"
+            android:theme="@style/Theme.Navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".vectordrawable.AnimatedButtonBackground"
+            android:label="vectordrawable/AnimatedButton"
+            android:theme="@style/Theme.Transition">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".vectordrawable.PathMorphActivity"
+            android:label="vectordrawable/PathMorphActivity"
+            android:theme="@style/Theme.vector">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".vectordrawable.ExampleActivity"
+            android:label="vectordrawable/ExampleActivity"
+            android:theme="@style/Theme.vector">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".vectordrawable.FillInHeartActivity"
+            android:label="vectordrawable/FillInHeartActivity"
+            android:theme="@style/Theme.vector">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".vectordrawable.RotateActivity"
+            android:label="vectordrawable/RotateActivity"
+            android:theme="@style/Theme.vector">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 

@@ -14,10 +14,10 @@
             <option value="$PROJECT_DIR$/mediademo" />
             <option value="$PROJECT_DIR$/supportdesigndemo" />
             <option value="$PROJECT_DIR$/supportotherdemos" />
-            <option value="$PROJECT_DIR$/supportsource" />
             <option value="$PROJECT_DIR$/supportv13demo" />
             <option value="$PROJECT_DIR$/supportv4demo" />
             <option value="$PROJECT_DIR$/supportv7demo" />
+            <option value="$PROJECT_DIR$/uidemos" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -16,9 +16,86 @@
 
 <resources>
     <string name="activity_sample_code">Support Transition Demos</string>
-    <string name="scene">Scene</string>
-    <string name="custom">Custom Transition</string>
-    <string name="beginDelayed">Begin Delayed Transition</string>
+    <string name="scene">transition/Scene</string>
+    <string name="custom">transition/Custom Transition</string>
+    <string name="beginDelayed">transition/Begin Delayed Transition</string>
     <string name="toggle">Toggle</string>
     <string name="begin">Begin</string>
+
+
+    <string name="app_nav_home_label">Support App Navigation</string>
+
+    <string name="simple_up_label">Simple Up Navigation</string>
+    <string name="simple_up_description">This demo shows the simple case of up navigation that does not ever need to cross across different tasks. Press the up button on the action bar to return to the demo list. For simple drill-down navigation, the application up and system back buttons will navigate to the same location, leaving the task\'s back stack in the same state.</string>
+
+    <string name="peer_label">Peer Activities</string>
+    <string name="peer_description">This is an activity that shows content with many navigation peers. Think of a content browser that offers links to related content items. Pressing back from this activity will return to the previously viewed content item if you reached this point through a related link. If you reached it from the app nav example home activity, back will return there. Navigating up from this activity will always return to the app nav example home activity and clean up the back stack along the way.</string>
+    <string name="launch_peer">Link to another peer activity</string>
+    <string name="peer_count">Peer count: </string>
+
+    <string name="view_from_other_task_label">View from other task</string>
+    <string name="view_from_other_task_description">This combined demo shows how to handle up navigation when another task has launched your app\'s activity on its own task stack. Navigating up in this scenario should synthesize a task stack representing the most common or direct navigation path to the parent activity. The code example shows how to handle this using helper code from the support library. Press the button below to launch a separate task and begin the demo.</string>
+    <string name="launch_other_task">Launch new task</string>
+
+    <string name="outside_task_label">Outside Task</string>
+    <string name="outside_task_description">This activity has been launched in a new task. You can confirm this by pressing the Recents button now and switching back to the app navigation example task. This activity will view content with the fake mimetype \"application/x-example\" which will be received by another code example activity to continue the demo. Press the View button below.</string>
+
+    <string name="content_view_label">Content Viewer</string>
+    <string name="content_view_description">This activity can receive ACTION_VIEW intents with the mimetype \"application/x-example\", sent by the outside task component of this demo. If you launched the activity this way then it will be on the viewing activity\'s task stack. Press the back button to finish this activity and return to the activity that wanted to view the content. Press the up button in the action bar to jump back into the main demo task with a synthesized back stack. This matches the pattern for content viewers such as a photo gallery or video player.</string>
+    <string name="default_status_text">Navigated here from category</string>
+
+    <string name="content_category_label">Content Category</string>
+    <string name="intermediate_description">This activity is a parent for the example content viewer activity. Navigating up from the content viewer will lead here. Navigating up from here will lead back to the app navigation home activity. Note that if you reached this activity by navigating up from the example content viewer activity, you are back on the main app navigation example task. Press the button below to navigate to the content viewer activity.</string>
+    <string name="launch_content_view">Launch content view activity</string>
+
+    <string name="notifications_label">Notifications</string>
+    <string name="notifications_description">There are two classes of notifications: notifications that deep-link into an app directly, (e.g. an incoming SMS) and notifications that present an interstitial/summary of multiple collapsed notifications before linking into the app itself. (e.g. Calendar event notifications.) The buttons below will create notifications of each type.</string>
+    <string name="post_direct_notification">Post direct notification</string>
+    <string name="post_interstitial_notification">Post interstitial notification</string>
+
+    <string name="interstitial_label">Interstitial</string>
+    <string name="interstitial_description">This is an interstitial activity running in response to a notification. It presents a summary of info in a lightweight manner that does not exist as a task in Recents. Tap the button below to jump to the primary content.</string>
+
+
+    <string name="example_from_documentation">Example from documentation</string>
+    <string name="rotation_only">Rotation only</string>
+    <string name="path_morph_only">Path morph only</string>
+    <string name="animate">Animate</string>
+
+    <string name="clock">Clock</string>
+
+    <string name="smiling_face">Smiling face</string>
+
+    <string name="fill_in_heart">Fill in heart</string>
+    <string name="love_it">Love it</string>
+
+<string name="path_circle">
+    M 50,50
+    m -48,0
+    a 48,48 0 1,0 96,0
+    a 48,48 0 1,0 -96,0
+  </string>
+  <string name="path_face_left_eye">
+    M 35,40
+    m -7,0
+    a 7,7 0 1,0 14,0
+    a 7,7 0 1,0 -14,0
+  </string>
+  <string name="path_face_right_eye">
+    M 65,40
+    m -7,0
+    a 7,7 0 1,0 14,0
+    a 7,7 0 1,0 -14,0
+  </string>
+  <string name="path_face_mouth_sad">
+    M 30,75
+    Q 50,55 70,75
+  </string>
+  <string name="path_face_mouth_happy">
+    M 30,65
+    Q 50,85 70,65
+  </string>
+  <string name="heart">
+    M25.119,2.564c12.434,0.023,18.68,5.892,24.88,17.612  c6.2-11.721,12.446-17.589,24.877-17.612c13.81-0.025,25.035,10.575,25.061,23.66c0.033,23.708-24.952,47.46-49.938,71.212  C25.016,73.685,0.03,49.932,0.064,26.224C0.085,13.14,11.309,2.539,25.119,2.564z
+  </string>
 </resources>

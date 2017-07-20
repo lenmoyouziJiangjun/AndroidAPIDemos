@@ -9,10 +9,10 @@
       <module fileurl="file://$PROJECT_DIR$/mediademo/mediademo.iml" filepath="$PROJECT_DIR$/mediademo/mediademo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportdesigndemo/supportdesigndemo.iml" filepath="$PROJECT_DIR$/supportdesigndemo/supportdesigndemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportotherdemos/supportotherdemos.iml" filepath="$PROJECT_DIR$/supportotherdemos/supportotherdemos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/supportsource/supportsource.iml" filepath="$PROJECT_DIR$/supportsource/supportsource.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv13demo/supportv13demo.iml" filepath="$PROJECT_DIR$/supportv13demo/supportv13demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv4demo/supportv4demo.iml" filepath="$PROJECT_DIR$/supportv4demo/supportv4demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv7demo/supportv7demo.iml" filepath="$PROJECT_DIR$/supportv7demo/supportv7demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uidemos/uidemos.iml" filepath="$PROJECT_DIR$/uidemos/uidemos.iml" />
     </modules>
   </component>
 </project>

@@ -44,7 +44,7 @@ public class SupportOtherDemos extends ListActivity {
         List<Map<String, Object>> myData = new ArrayList<>();
 
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
-        mainIntent.addCategory("com.example.android.support.transition.SAMPLE_CODE");
+        mainIntent.addCategory("com.example.android.support.other.SAMPLE_CODE");
 
         PackageManager pm = getPackageManager();
         List<ResolveInfo> list = pm.queryIntentActivities(mainIntent, 0);
