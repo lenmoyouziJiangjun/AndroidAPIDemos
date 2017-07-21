@@ -5,14 +5,15 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidDemos.iml" filepath="$PROJECT_DIR$/AndroidDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/apidemo/apidemo.iml" filepath="$PROJECT_DIR$/apidemo/apidemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demobase/demobase.iml" filepath="$PROJECT_DIR$/demobase/demobase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonanimationdemo/commonanimationdemo.iml" filepath="$PROJECT_DIR$/commonanimationdemo/commonanimationdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonuidemo/commonuidemo.iml" filepath="$PROJECT_DIR$/commonuidemo/commonuidemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediademo/mediademo.iml" filepath="$PROJECT_DIR$/mediademo/mediademo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxdemo/rxdemo.iml" filepath="$PROJECT_DIR$/rxdemo/rxdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportdesigndemo/supportdesigndemo.iml" filepath="$PROJECT_DIR$/supportdesigndemo/supportdesigndemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportotherdemos/supportotherdemos.iml" filepath="$PROJECT_DIR$/supportotherdemos/supportotherdemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv13demo/supportv13demo.iml" filepath="$PROJECT_DIR$/supportv13demo/supportv13demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv4demo/supportv4demo.iml" filepath="$PROJECT_DIR$/supportv4demo/supportv4demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportv7demo/supportv7demo.iml" filepath="$PROJECT_DIR$/supportv7demo/supportv7demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/uidemos/uidemos.iml" filepath="$PROJECT_DIR$/uidemos/uidemos.iml" />
     </modules>
   </component>
 </project>
