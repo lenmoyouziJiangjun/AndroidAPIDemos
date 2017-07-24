@@ -23,14 +23,14 @@ import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.SparseArrayObjectAdapter;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.lll.supportotherdemos.R;
-import com.lll.supportotherdemos.leanback.BackgroundHelper;
+import com.lll.supportotherdemos.leanback.PlaybackOverlayActivity;
+import com.lll.supportotherdemos.leanback.helper.BackgroundHelper;
 import com.lll.supportotherdemos.leanback.DetailsActivity;
-import com.lll.supportotherdemos.leanback.DetailsDescriptionPresenter;
+import com.lll.supportotherdemos.leanback.presenter.DetailsDescriptionPresenter;
 import com.lll.supportotherdemos.leanback.SearchActivity;
 import com.lll.supportotherdemos.leanback.pojo.PhotoItem;
 import com.lll.supportotherdemos.leanback.presenter.CardPresenter;

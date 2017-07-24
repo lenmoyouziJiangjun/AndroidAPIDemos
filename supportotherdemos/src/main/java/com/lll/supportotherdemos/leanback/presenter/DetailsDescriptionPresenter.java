@@ -1,4 +1,4 @@
-package com.lll.supportotherdemos.leanback;
+package com.lll.supportotherdemos.leanback.presenter;
 
 import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
 

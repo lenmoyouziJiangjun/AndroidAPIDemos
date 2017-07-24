@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.lll.supportotherdemos.R;
+import com.lll.supportotherdemos.leanback.helper.BackgroundHelper;
 
 /**
  * Version 1.0

@@ -1,4 +1,4 @@
-package com.lll.supportotherdemos.leanback;
+package com.lll.supportotherdemos.leanback.helper;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

@@ -104,6 +104,7 @@
     <string name="browse">Browse</string>
     <string name="browse_description">BrowseFragment test</string>
     <string name="browse_support">Browse(support version)</string>
+    <string name="browse_animation">Browse Animation</string>
     <string name="browse_support_description">BrowseSupportFragment test</string>
     <string name="search">Search</string>
     <string name="search_description">SearchFragment test</string>
@@ -111,6 +112,7 @@
     <string name="search_support_description">SearchSupportFragment test</string>
     <string name="details">Details</string>
     <string name="details_description">DetailsFragment test</string>
+    <string name="browse_animation_description">Browse Animation test</string>
     <string name="details_support">Details(support version)</string>
     <string name="details_support_description">DetailsSupportFragment test</string>
     <string name="search_details">Search Details</string>

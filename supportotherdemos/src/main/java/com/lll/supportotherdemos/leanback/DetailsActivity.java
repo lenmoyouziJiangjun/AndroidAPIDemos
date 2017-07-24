@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import com.lll.supportotherdemos.R;
 import com.lll.supportotherdemos.leanback.fragment.DetailsFragment;
+import com.lll.supportotherdemos.leanback.fragment.NewDetailsFragment;
+import com.lll.supportotherdemos.leanback.helper.BackgroundHelper;
 import com.lll.supportotherdemos.leanback.pojo.PhotoItem;
 
 

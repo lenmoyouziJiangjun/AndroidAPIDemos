@@ -1,8 +1,6 @@
 package com.lll.supportotherdemos.leanback.fragment;
 
-import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,8 +26,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lll.supportotherdemos.R;
-import com.lll.supportotherdemos.leanback.BackgroundHelper;
+import com.lll.supportotherdemos.leanback.helper.BackgroundHelper;
 import com.lll.supportotherdemos.leanback.BrowseActivity;
+import com.lll.supportotherdemos.leanback.DetailsActivity;
+import com.lll.supportotherdemos.leanback.GuidedStepActivity;
+import com.lll.supportotherdemos.leanback.GuidedStepHalfScreenActivity;
+import com.lll.supportotherdemos.leanback.RowsActivity;
 import com.lll.supportotherdemos.leanback.SearchActivity;
 import com.lll.supportotherdemos.leanback.pojo.PhotoItem;
 import com.lll.supportotherdemos.leanback.presenter.CardPresenter;

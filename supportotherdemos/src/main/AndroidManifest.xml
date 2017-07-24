@@ -163,6 +163,123 @@
             </intent-filter>
         </activity>
 
+        <!---->
+        <activity
+            android:name=".leanback.LeanbackActivity"
+            android:label="leanback"
+            android:theme="@style/Theme.Example.Leanback">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.support.other.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".leanback.BrowseActivity"
+            android:theme="@style/Theme.Example.Leanback.Browse"
+            android:exported="true" />
+
+
+
+        <activity android:name=".leanback.BrowseAnimationActivity"
+            android:exported="true" >
+        </activity>
+
+        <activity android:name=".leanback.DetailsActivity"
+            android:theme="@style/Theme.Example.Leanback.Details"
+            android:exported="true" />
+
+        <!--<activity android:name="DetailsSupportActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.Details"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.SearchDetailsActivity"
+            android:theme="@style/Theme.Example.Leanback.SearchDetails"
+            android:exported="true" />
+
+        <!--<activity android:name="SearchDetailsSupportActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.SearchDetails"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.RowsActivity"
+            android:theme="@style/Theme.Example.Leanback.Rows"
+            android:exported="true" />
+
+        <!--<activity android:name="RowsSupportActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.Rows"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.PlaybackOverlayActivity"
+            android:configChanges=
+                "screenSize|smallestScreenSize|screenLayout|orientation"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:launchMode="singleTask"
+            android:exported="true" />
+
+        <!--<activity android:name="PlaybackOverlaySupportActivity"-->
+            <!--android:configChanges=-->
+                <!--"screenSize|smallestScreenSize|screenLayout|orientation"-->
+            <!--android:resizeableActivity="true"-->
+            <!--android:supportsPictureInPicture="true"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.VerticalGridActivity"
+            android:theme="@style/Theme.Example.Leanback.VerticalGrid"
+            android:exported="true" />
+
+        <!--<activity android:name="VerticalGridSupportActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.VerticalGrid"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.SearchActivity"
+            android:exported="true" />
+
+        <!--<activity android:name="SearchSupportActivity"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.BrowseErrorActivity"
+            android:theme="@style/Theme.Example.Leanback.Browse"
+            android:exported="true" />
+
+        <!--<activity android:name="BrowseErrorSupportActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.Browse"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.HorizontalGridTestActivity"
+            android:exported="true" />
+
+        <activity android:name=".leanback.GuidedStepActivity"
+            android:theme="@style/Theme.Example.Leanback.GuidedStep"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true" />
+
+        <!--<activity android:name="GuidedStepSupportActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.GuidedStep"-->
+            <!--android:windowSoftInputMode="adjustResize"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.GuidedStepHalfScreenActivity"
+            android:theme="@style/Theme.Example.Leanback.GuidedStep.Half"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true" />
+
+        <!--<activity android:name="GuidedStepSupportHalfScreenActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.GuidedStep.Half"-->
+            <!--android:windowSoftInputMode="adjustResize"-->
+            <!--android:exported="true" />-->
+
+        <activity android:name=".leanback.DetailsPresenterSelectionActivity"
+            android:theme="@style/Theme.Example.Leanback.GuidedStep"
+            android:exported="true" />
+
+        <activity android:name=".leanback.OnboardingActivity"
+            android:theme="@style/Theme.Example.Leanback.Onboarding"
+            android:exported="true" />
+
+        <!--<activity android:name=".OnboardingSupportActivity"-->
+            <!--android:theme="@style/Theme.Example.Leanback.Onboarding"-->
+            <!--android:exported="true" />-->
 
     </application>
 
