@@ -17,12 +17,10 @@ import java.util.List;
 
 public class LeanbackActivity extends Activity {
 
-    private GuidedStepFragment mGuidedStepFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mGuidedStepFragment = new StepFragment();
+        GuidedStepFragment.addAsRoot(this, new StepFragment(), android.R.id.content);
     }
 
     public static class StepFragment extends GuidedStepFragment {

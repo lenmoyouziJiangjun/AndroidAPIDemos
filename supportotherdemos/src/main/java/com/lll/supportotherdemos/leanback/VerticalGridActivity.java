@@ -12,7 +12,7 @@ public class VerticalGridActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_framelayout);
-        getFragmentManager().beginTransaction().add(R.id.fl_container, new VerticalGridFragment());
+        getFragmentManager().beginTransaction().add(R.id.fl_container, new VerticalGridFragment()).commit();
         getWindow().setBackgroundDrawableResource(R.drawable.bg);
     }
 }
