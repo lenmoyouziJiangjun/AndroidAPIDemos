@@ -1,4 +1,4 @@
-package com.lll.rxdemo.rx2.ui;
+package com.lll.rxdemo.rx2.ui.rxbus;
 
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;

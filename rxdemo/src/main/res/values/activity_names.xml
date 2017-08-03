@@ -1,3 +1,4 @@
 <resources>
-    <string name="rx_network">Network/Rx2NetWork</string>
+    <string name="activity_rx_network">Network/Rx2NetWork</string>
+    <string name="activity_rx_bus">RxBus</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.lll.rxdemo.rx2.ui;
+package com.lll.rxdemo.rx2.ui.rxbus;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -44,10 +43,11 @@ public class RxBusActivity extends AppCompatActivity {
         mTextView = new TextView(this);
         mTextView.setTextSize(20);
         mTextView.setTextColor(Color.RED);
-        ViewGroup.LayoutParams p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 50);
+        ViewGroup.LayoutParams p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
 
         mTextView.setLayoutParams(p);
         mTextView.setGravity(Gravity.CENTER);
+        mTextView.setBackgroundColor(Color.BLUE);
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

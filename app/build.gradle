@@ -7,6 +7,7 @@ android {
         applicationId "com.lll.demo"
         minSdkVersion 21
         targetSdkVersion 25
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -38,7 +39,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:multidex:1.0.1'
     testCompile 'junit:junit:4.12'
     compile project(path: ':supportv4demo')
     compile project(path: ':supportv7demo')
@@ -47,6 +48,5 @@ dependencies {
     compile project(path: ':supportdesigndemo')
     compile project(path: ':supportotherdemos')
     compile project(path: ':mediademo')
-    compile project(path: ':rxdemo')
     compile project(path: ':rxdemo')
 }

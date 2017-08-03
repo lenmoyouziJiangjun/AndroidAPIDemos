@@ -12,7 +12,15 @@
 
         <activity
             android:name=".rx2.ui.network.NetworkingActivity"
-            android:label="@string/rx_network">
+            android:label="@string/activity_rx_network">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.rxbus.RxBusActivity"
+            android:label="@string/activity_rx_bus">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
