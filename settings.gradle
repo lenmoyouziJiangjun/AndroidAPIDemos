@@ -1,1 +1,3 @@
-include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportotherdemos', ':mediademo', ':commonuidemo', ':commonanimationdemo', ':rxdemo'
+//include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportotherdemos', ':mediademo', ':commonuidemo', ':commonanimationdemo', ':rxdemo', ':ndkdemo', "supportsource"
+include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportotherdemos', ':mediademo', ':commonuidemo', ':commonanimationdemo', ':rxdemo', ':ndkdemo', ':basedemo'
+

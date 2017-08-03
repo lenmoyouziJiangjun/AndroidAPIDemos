@@ -47,4 +47,6 @@ dependencies {
     compile project(path: ':supportdesigndemo')
     compile project(path: ':supportotherdemos')
     compile project(path: ':mediademo')
+    compile project(path: ':rxdemo')
+    compile project(path: ':rxdemo')
 }

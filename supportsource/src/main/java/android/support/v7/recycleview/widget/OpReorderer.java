@@ -2,12 +2,12 @@ package android.support.v7.recycleview.widget;
 
 import java.util.List;
 
-import android.support.v7.recycleview.widget.AdapterHelper.UpdateOp;
+import android.support.v7.recycleview.helper.AdapterHelper.UpdateOp;
 
-import static android.support.v7.recycleview.widget.AdapterHelper.UpdateOp.ADD;
-import static android.support.v7.recycleview.widget.AdapterHelper.UpdateOp.MOVE;
-import static android.support.v7.recycleview.widget.AdapterHelper.UpdateOp.REMOVE;
-import static android.support.v7.recycleview.widget.AdapterHelper.UpdateOp.UPDATE;
+import static android.support.v7.recycleview.helper.AdapterHelper.UpdateOp.ADD;
+import static android.support.v7.recycleview.helper.AdapterHelper.UpdateOp.MOVE;
+import static android.support.v7.recycleview.helper.AdapterHelper.UpdateOp.REMOVE;
+import static android.support.v7.recycleview.helper.AdapterHelper.UpdateOp.UPDATE;
 
 /**
  * Version 1.0
@@ -17,13 +17,13 @@ import static android.support.v7.recycleview.widget.AdapterHelper.UpdateOp.UPDAT
  */
 public class OpReorderer {
 
-    final Callback mCallback;
+    public final Callback mCallback;
 
     public OpReorderer(Callback callback) {
         mCallback = callback;
     }
 
-    void reorderOps(List<UpdateOp> ops) {
+    public void reorderOps(List<UpdateOp> ops) {
         // since move operations breaks continuity, their effects on ADD/RM are hard to handle.
         // we push them to the end of the list so that they can be handled easily.
         int badMove;
@@ -48,7 +48,7 @@ public class OpReorderer {
         }
     }
 
-    void swapMoveRemove(List<UpdateOp> list, int movePos, UpdateOp moveOp,
+    public void swapMoveRemove(List<UpdateOp> list, int movePos, UpdateOp moveOp,
                         int removePos, UpdateOp removeOp) {
         UpdateOp extraRm = null;
         // check if move is nulled out by remove
@@ -220,7 +220,7 @@ public class OpReorderer {
         return -1;
     }
 
-    interface Callback {
+    public interface Callback {
 
         UpdateOp obtainUpdateOp(int cmd, int startPosition, int itemCount, Object payload);
 

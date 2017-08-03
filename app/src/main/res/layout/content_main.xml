@@ -83,4 +83,40 @@
         android:text="MediaDemos"
         android:textColor="@color/colorAccent" />
 
+    <Button
+        android:id="@+id/btn_animation"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goAnimationDemo"
+        android:text="AnimationDemo"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btn_ui"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goUIDemo"
+        android:text="UIDemo"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btn_rxdemo"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goRxDemo"
+        android:text="RxDemo"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btn_native"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="6dip"
+        android:onClick="goNativeDemo"
+        android:text="NativeDemo"
+        android:textColor="@color/colorAccent" />
+
 </LinearLayout>
