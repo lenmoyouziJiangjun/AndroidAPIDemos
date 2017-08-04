@@ -1,4 +1,11 @@
 <resources>
     <string name="activity_rx_network">Network/Rx2NetWork</string>
+    <string name="activity_rx_compose">ComposeOperator</string>
     <string name="activity_rx_bus">RxBus</string>
+
+    <string name="activity_rx_ope_buffer">Operator/Buffer</string>
+    <string name="activity_rx_ope_completable">Operator/Completable</string>
+    <string name="activity_rx_ope_concat">Operator/Concat</string>
+    <string name="activity_rx_ope_subject">Operator/Subject</string>
+
 </resources>

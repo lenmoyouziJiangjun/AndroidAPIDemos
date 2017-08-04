@@ -26,6 +26,48 @@
                 <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".rx2.ui.compose.ComposeOperatorActivity"
+            android:label="@string/activity_rx_compose">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".rx2.ui.operators.BufferExampleActivity"
+            android:label="@string/activity_rx_ope_buffer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.ConcatExampleActivity"
+            android:label="@string/activity_rx_ope_concat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.CompletableObserverExampleActivity"
+            android:label="@string/activity_rx_ope_completable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.SubjectDemoActivity"
+            android:label="@string/activity_rx_ope_subject">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
