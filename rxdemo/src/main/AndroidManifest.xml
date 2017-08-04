@@ -68,6 +68,63 @@
                 <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".rx2.ui.operators.DeferExampleActivity"
+            android:label="@string/activity_rx_ope_defer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.DelayExampleActivity"
+            android:label="@string/activity_rx_ope_delay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.DisposableExampleActivity"
+            android:label="@string/activity_rx_ope_dispose">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.DistinctExampleActivity"
+            android:label="@string/activity_rx_ope_distinct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.FilterExampleActivity"
+            android:label="@string/activity_rx_ope_filter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.FlowableExampleActivity"
+            android:label="@string/activity_rx_ope_flowable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.IntervalExampleActivity"
+            android:label="@string/activity_rx_ope_interval">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

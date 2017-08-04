@@ -8,4 +8,11 @@
     <string name="activity_rx_ope_concat">Operator/Concat</string>
     <string name="activity_rx_ope_subject">Operator/Subject</string>
 
+    <string name="activity_rx_ope_defer">Operator/Defer</string>
+    <string name="activity_rx_ope_delay">Operator/Delay</string>
+    <string name="activity_rx_ope_dispose">Operator/Dispose</string>
+    <string name="activity_rx_ope_distinct">Operator/Distinct</string>
+    <string name="activity_rx_ope_filter">Operator/Filter</string>
+    <string name="activity_rx_ope_flowable">Operator/Flowable</string>
+    <string name="activity_rx_ope_interval">Operator/Interval</string>
 </resources>
