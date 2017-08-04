@@ -7,7 +7,6 @@
     <string name="activity_rx_ope_completable">Operator/Completable</string>
     <string name="activity_rx_ope_concat">Operator/Concat</string>
     <string name="activity_rx_ope_subject">Operator/Subject</string>
-
     <string name="activity_rx_ope_defer">Operator/Defer</string>
     <string name="activity_rx_ope_delay">Operator/Delay</string>
     <string name="activity_rx_ope_dispose">Operator/Dispose</string>
@@ -15,4 +14,20 @@
     <string name="activity_rx_ope_filter">Operator/Filter</string>
     <string name="activity_rx_ope_flowable">Operator/Flowable</string>
     <string name="activity_rx_ope_interval">Operator/Interval</string>
+
+
+    <string name="activity_rx_ope_last">Operator/LastOperator</string>
+    <string name="activity_rx_ope_map">Operator/Map</string>
+    <string name="activity_rx_ope_merge">Operator/Merge</string>
+    <string name="activity_rx_ope_reduce">Operator/Reduce</string>
+    <string name="activity_rx_ope_replay">Operator/Replay</string>
+    <string name="activity_rx_ope_scan">Operator/Scan</string>
+    <string name="activity_rx_ope_single">Operator/Single</string>
+    <string name="activity_rx_ope_skip">Operator/Skip</string>
+    <string name="activity_rx_ope_take">Operator/Take</string>
+    <string name="activity_rx_ope_throttle_first">Operator/ThrottleFirst</string>
+    <string name="activity_rx_ope_throttle_last">Operator/ThrottleLast</string>
+    <string name="activity_rx_ope_timer">Operator/Timer</string>
+    <string name="activity_rx_ope_window">Operator/Window</string>
+    <string name="activity_rx_ope_zip">Operator/Zip</string>
 </resources>

@@ -125,6 +125,123 @@
                 <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".rx2.ui.operators.LastOperatorExampleActivity"
+            android:label="@string/activity_rx_ope_last">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.MapExampleActivity"
+            android:label="@string/activity_rx_ope_map">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.MergeExampleActivity"
+            android:label="@string/activity_rx_ope_merge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.ReduceExampleActivity"
+            android:label="@string/activity_rx_ope_reduce">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.ReplayExampleActivity"
+            android:label="@string/activity_rx_ope_replay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.ScanExampleActivity"
+            android:label="@string/activity_rx_ope_scan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.SingleObserverExampleActivity"
+            android:label="@string/activity_rx_ope_single">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.SkipExampleActivity"
+            android:label="@string/activity_rx_ope_skip">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.TakeExampleActivity"
+            android:label="@string/activity_rx_ope_take">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.ThrottleFirstExampleActivity"
+            android:label="@string/activity_rx_ope_throttle_first">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.ThrottleLastExampleActivity"
+            android:label="@string/activity_rx_ope_throttle_last">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rx2.ui.operators.TimerExampleActivity"
+            android:label="@string/activity_rx_ope_timer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".rx2.ui.operators.WindowExampleActivity"
+            android:label="@string/activity_rx_ope_window">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".rx2.ui.operators.ZipExampleActivity"
+            android:label="@string/activity_rx_ope_zip">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lll.rxdemo.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>
