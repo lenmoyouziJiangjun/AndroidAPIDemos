@@ -575,6 +575,26 @@
                 <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".widget.AdapterSampleActivity"
+            android:label="@string/animated_adapter"
+            android:theme="@style/Theme.Animator.Actionbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".widget.AnimatorSampleActivity"
+            android:label="@string/animated_sample"
+            android:theme="@style/Theme.Animator.Actionbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 
