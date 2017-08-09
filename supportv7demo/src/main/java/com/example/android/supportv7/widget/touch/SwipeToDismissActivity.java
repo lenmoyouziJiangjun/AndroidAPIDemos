@@ -128,8 +128,8 @@ public class SwipeToDismissActivity extends ItemTouchHelperActivity {
     @Override
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public boolean onChildDraw(Canvas c, RecyclerView recyclerView,
-            RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState,
-            boolean isCurrentlyActive) {
+                               RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState,
+                               boolean isCurrentlyActive) {
         if (!mCustomSwipeEnabled) {
             return false;
         }

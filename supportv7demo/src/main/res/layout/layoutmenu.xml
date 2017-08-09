@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dip"
+    android:layout_height="@dimen/touch_item_min_height"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/action_button"
+        android:layout_width="100dip"
+        android:layout_height="@dimen/touch_item_min_height"
+        android:layout_gravity="end|center_vertical"
+        android:background="@color/cardview_dark_background"
+        android:gravity="center"
+        android:text="Delete"
+        android:visibility="visible" />
+</LinearLayout>

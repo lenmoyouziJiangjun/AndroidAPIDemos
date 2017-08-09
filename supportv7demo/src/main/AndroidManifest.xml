@@ -535,6 +535,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".widget.touch.SwipeShowButton"
+            android:label="@string/swipe_show_ope">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".widget.touch.SwipeShowButton2"
+            android:label="@string/swipe_show_ope2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".widget.touch.DragAndDropActivity"
             android:label="@string/drag_and_drop_activity">
             <intent-filter>
@@ -594,7 +610,13 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
             </intent-filter>
-        </activity>
+        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
     </application>
 
 

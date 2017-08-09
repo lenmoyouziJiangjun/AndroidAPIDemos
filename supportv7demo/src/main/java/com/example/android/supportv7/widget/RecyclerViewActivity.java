@@ -31,7 +31,15 @@ import android.view.ViewGroup;
 
 import com.example.android.supportv7.Cheeses;
 import com.example.android.supportv7.widget.adapter.SimpleStringAdapter;
-
+/**
+ * Version 1.0
+ * Created by lll on 17/8/8.
+ * Description
+ * 参考网站1、：https://github.com/cymcsg/UltimateRecyclerView
+ *       2、https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+ *
+ * copyright generalray4239@gmail.com
+ */
 public class RecyclerViewActivity extends Activity {
 
     private static final String TAG = "RecyclerViewActivity";

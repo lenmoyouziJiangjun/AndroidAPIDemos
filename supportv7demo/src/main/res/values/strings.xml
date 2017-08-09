@@ -181,6 +181,8 @@
     <string name="start_action_mode">Start Action Mode</string>
 
     <string name="swipe_to_dismiss_activity">RecyclerView/ItemTouchHelper/Swipe To Dismiss</string>
+    <string name="swipe_show_ope">RecyclerView/ItemTouchHelper/Swipe Show Ope</string>
+    <string name="swipe_show_ope2">RecyclerView/ItemTouchHelper/Swipe Show Ope2</string>
     <string name="drag_and_drop_activity">RecyclerView/ItemTouchHelper/Drag and Drop Activity</string>
     <string name="swipe_start">start</string>
     <string name="swipe_end">end</string>
