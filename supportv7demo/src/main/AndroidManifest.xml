@@ -616,6 +616,83 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <!--Vlayout-->
+        <activity
+            android:name=".widget.vlayout.MainActivity"
+            android:label="@string/vlayout_main"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".widget.vlayout.OnePlusNLayoutActivity"
+            android:label="@string/vlayout_oneplus"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".widget.vlayout.RootActivity"
+            android:label="@string/vlayout_root"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".widget.vlayout.TestActivity"
+            android:label="@string/vlayout_test"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".widget.vlayout.VLayoutActivity"
+            android:label="@string/vlayout_v"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!--scrollerView-->
+        <activity
+            android:name=".widget.discreteScrollView.weather.WeatherActivity"
+            android:label="@string/scroller_weather"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".widget.discreteScrollView.shop.ShopActivity"
+            android:label="@string/scroller_shop"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".widget.discreteScrollView.gallery.GalleryActivity"
+            android:label="@string/scroller_gallery"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.android.supportv7.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
 
     </application>
 

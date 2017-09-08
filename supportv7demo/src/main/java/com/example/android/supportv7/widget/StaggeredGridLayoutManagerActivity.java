@@ -31,13 +31,13 @@ public class StaggeredGridLayoutManagerActivity
         if (mVertical) {
             return new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         } else {
-            return new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL);
+            return new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
         }
     }
 
     @Override
     protected ConfigToggle[] createConfigToggles() {
-        return new ConfigToggle[] {
+        return new ConfigToggle[]{
                 new ConfigToggle(this, R.string.vertical) {
                     @Override
                     public boolean isChecked() {

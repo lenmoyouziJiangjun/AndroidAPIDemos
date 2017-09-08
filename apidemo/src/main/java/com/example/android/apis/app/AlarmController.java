@@ -63,6 +63,16 @@ App/Service/Alarm Controller
 </table>
 
  */
+
+
+/**
+ * Version 1.0
+ * Created by lll on 17/9/7.
+ * Description
+ * 闹钟解决方案：http://www.jianshu.com/p/1f919c6eeff6
+ *
+ * copyright generalray4239@gmail.com
+ */
 public class AlarmController extends Activity {
     Toast mToast;
 

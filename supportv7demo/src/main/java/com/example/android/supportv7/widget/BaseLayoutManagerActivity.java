@@ -23,7 +23,6 @@ import com.example.android.supportv7.widget.util.ConfigToggle;
 import com.example.android.supportv7.widget.util.ConfigViewHolder;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,10 +32,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 
 /**
  * A simple activity that can be extended to demonstrate LayoutManagers.
@@ -79,12 +78,10 @@ abstract public class BaseLayoutManagerActivity<T extends RecyclerView.LayoutMan
     }
 
     protected RecyclerView.Adapter createAdapter() {
-        return new SimpleStringAdapter(this, Cheeses.sCheeseStrings) {
+        return new SimpleStringAdapter(this, Cheeses.sCheeseStrings_small) {
             @Override
-            public ViewHolder onCreateViewHolder(ViewGroup parent,
-                    int viewType) {
-                final ViewHolder vh = super
-                        .onCreateViewHolder(parent, viewType);
+            public ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
+                final ViewHolder vh = super.onCreateViewHolder(parent, viewType);
                 vh.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

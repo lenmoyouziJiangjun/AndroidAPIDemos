@@ -1037,9 +1037,19 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
      *
      * @param onFlingListener The {@link OnFlingListener} instance.
      */
-    public void setOnFlingListener(OnFlingListener listener) {
-        mOnFlingListener = listener;
+    public void setOnFlingListener(OnFlingListener onFlingListener) {
+        mOnFlingListener = onFlingListener;
     }
+
+    /**
+     * Get the current {@link OnFlingListener} from this {@link RecyclerView}.
+     *
+     * @return The {@link OnFlingListener} instance currently set (can be null).
+     */
+    public OnFlingListener getOnFlingListener() {
+        return mOnFlingListener;
+    }
+
 
     @Override
     protected Parcelable onSaveInstanceState() {
@@ -2729,8 +2739,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         if (mLayout.mAutoMeasure) {
             final int widthMode = MeasureSpec.getMode(widthSpec);
             final int heightMode = MeasureSpec.getMode(heightSpec);
-            final boolean skipMeasure = widthMode == MeasureSpec.EXACTLY
-                    && heightMode == MeasureSpec.EXACTLY;//match_parent
+            final boolean skipMeasure = widthMode == MeasureSpec.EXACTLY && heightMode == MeasureSpec.EXACTLY;//match_parent
             mLayout.onMeasure(mRecycler, mState, widthSpec, heightSpec);
             if (skipMeasure || mAdapter == null) {
                 return;
@@ -2983,19 +2992,26 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
      * Wrapper around layoutChildren() that handles animating changes caused by layout.
      * Animations work on the assumption that there are five different kinds of items
      * in play:
+     * <p>
      * PERSISTENT: items are visible before and after layout
+     * <p>
      * REMOVED: items were visible before layout and were removed by the app
+     * <p>
      * ADDED: items did not exist before layout and were added by the app
+     * <p>
      * DISAPPEARING: items exist in the data set before/after, but changed from
      * visible to non-visible in the process of layout (they were moved off
      * screen as a side-effect of other changes)
+     * <p>
      * APPEARING: items exist in the data set before/after, but changed from
      * non-visible to visible in the process of layout (they were moved on
      * screen as a side-effect of other changes)
      * The overall approach figures out what items exist before/after layout and
      * infers one of the five above states for each of the items. Then the animations
      * are set up accordingly:
+     * <p>
      * PERSISTENT views are animated via
+     * <p>
      * {@link ItemAnimator#animatePersistence(ViewHolder, ItemHolderInfo, ItemHolderInfo)}
      * DISAPPEARING views are animated via
      * {@link ItemAnimator#animateDisappearance(ViewHolder, ItemHolderInfo, ItemHolderInfo)}
@@ -3012,9 +3028,9 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             return;
         }
         mState.mIsMeasuring = false;
-        if (mState.mLayoutStep == State.STEP_START) {
+        if (mState.mLayoutStep == State.STEP_START) {//默认就是start
             dispatchLayoutStep1();
-            mLayout.setExactMeasureSpecsFrom(this);
+            mLayout.setExactMeasureSpecsFrom(this);//计算RecycleView和宽高
             dispatchLayoutStep2();
         } else if (mAdapterHelper.hasUpdates() || mLayout.getWidth() != getWidth() ||
                 mLayout.getHeight() != getHeight()) {
@@ -3098,6 +3114,9 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         return lastKnownId;
     }
 
+    //当用户距离上次打开聚美app（包括可以收到push）>=20天，则在app图标上显示气泡数字为1
+
+
     /**
      * The first step of a layout where we;
      * - process adapter updates
@@ -3116,7 +3135,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         mState.mTrackOldChangeHolders = mState.mRunSimpleAnimations && mItemsChanged;
         mItemsAddedOrRemoved = mItemsChanged = false;
         mState.mInPreLayout = mState.mRunPredictiveAnimations;
-        mState.mItemCount = mAdapter.getItemCount();
+        mState.mItemCount = mAdapter.getItemCount();//itemcount赋值，用来处理ViewHolder的加载用
         findMinMaxChildLayoutPositions(mMinMaxLayoutPositions);
         if (mState.mRunSimpleAnimations) {
             // Step 0: Find out where all non-removed items are, pre-layout
@@ -3186,7 +3205,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         }
         onExitLayoutOrScroll();
         resumeRequestLayout(false);
-        mState.mLayoutStep = State.STEP_LAYOUT;
+        mState.mLayoutStep = State.STEP_LAYOUT; //更改状态，由start 更改为layout
     }
 
     /**
@@ -4864,7 +4883,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
          * @param position The pre-layout position to convert. Must be greater or equal to 0 and
          *                 less than {@link State#getItemCount()}.
          */
-        public int converPreLayoutPositionToPostLayout(int position) {
+        public int convertPreLayoutPositionToPostLayout(int position) {
             if (position < 0 || position >= mState.getItemCount()) {
                 throw new IndexOutOfBoundsException("invalid position " + position + ". State "
                         + "item count is " + mState.getItemCount());
@@ -4907,7 +4926,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             }
             // 1) Find from scrap by position
             if (holder == null) {
-                holder = getScrapViewForPosition(position, INVALID_TYPE, dryRun);
+                holder = getScrapViewForPosition(position, INVALID_TYPE, dryRun);//从缓存中取
                 if (holder != null) {
                     if (!validateViewHolderForOffsetPosition(holder)) {
                         // recycle this scrap
@@ -5182,7 +5201,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
                         }
                         targetCacheIndex = cacheIndex + 1;
                     }
-                    mCachedViews.add(targetCacheIndex, holder);
+                    mCachedViews.add(targetCacheIndex, holder);//将加载后的ViewHolder 存储进去
                     cached = true;
                 }
                 if (!cached) {
@@ -5370,14 +5389,14 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             }
 
             //Search in our first-level recycled view cache.
-            final int cacheSize = mCachedViews.size();
+            final int cacheSize = mCachedViews.size();//从缓存中取holder
             for (int i = 0; i < cacheSize; i++) {
                 final ViewHolder holder = mCachedViews.get(i);
                 // invalid view holders may be in cache if adapter has stable ids as they can be
                 // retrieved via getScrapViewForId
                 if (!holder.isInvalid() && holder.getLayoutPosition() == position) {
                     if (!dryRun) {
-                        mCachedViews.remove(i);
+                        mCachedViews.remove(i);//移除
                     }
                     return holder;
                 }
@@ -5949,31 +5968,31 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             mInChangeScrap = isChangeScrap;
         }
 
-        boolean isInvalid() {
+        public boolean isInvalid() {
             return (mFlags & FLAG_INVALID) != 0;
         }
 
-        boolean needsUpdate() {
+        public boolean needsUpdate() {
             return (mFlags & FLAG_UPDATE) != 0;
         }
 
-        boolean isBound() {
+        public boolean isBound() {
             return (mFlags & FLAG_BOUND) != 0;
         }
 
-        boolean isRemoved() {
+        public boolean isRemoved() {
             return (mFlags & FLAG_REMOVED) != 0;
         }
 
-        boolean hasAnyOfTheFlags(int flags) {
+        public boolean hasAnyOfTheFlags(int flags) {
             return (mFlags & flags) != 0;
         }
 
-        boolean isTmpDetached() {
+        public boolean isTmpDetached() {
             return (mFlags & FLAG_TMP_DETACHED) != 0;
         }
 
-        boolean isAdapterPositionUnknown() {
+        public boolean isAdapterPositionUnknown() {
             return (mFlags & FLAG_ADAPTER_POSITION_UNKNOWN) != 0 || isInvalid();
         }
 
@@ -7056,11 +7075,11 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             return mItemPrefetchEnabled;
         }
 
-        int getItemPrefetchCount() {
+        public int getItemPrefetchCount() {
             return 0;
         }
 
-        int gatherPrefetchIndices(int dx, int dy, State state, int[] outIndices) {
+        public int gatherPrefetchIndices(int dx, int dy, State state, int[] outIndices) {
             return 0;
         }
 
@@ -7409,7 +7428,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
          *
          * @param smoothScroller Instance which defines how smooth scroll should be animated
          */
-        public void startSmollScroll(SmoothScroller smoothScroller) {
+        public void startSmoothScroll(SmoothScroller smoothScroller) {
             if (mSmoothScroller != null && smoothScroller != mSmoothScroller
                     && mSmoothScroller.isRunning()) {
                 mSmoothScroller.stop();
@@ -8205,7 +8224,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
          * <p>
          * Use this method if the View is already measured once in this layout pass.
          */
-        boolean shouldReMeasureChild(View child, int widthSpec, int heightSpec, LayoutParams lp) {
+        public boolean shouldReMeasureChild(View child, int widthSpec, int heightSpec, LayoutParams lp) {
             return !mMeasurementCacheEnabled
                     || !isMeasurementUpToDate(child.getMeasuredWidth(), widthSpec, lp.width)
                     || !isMeasurementUpToDate(child.getMeasuredHeight(), heightSpec, lp.height);
@@ -8220,7 +8239,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
          * Use this method if the View is not yet measured and you need to decide whether to
          * measure this View or not.
          */
-        boolean shouldMeasureChild(View child, int widthSpec, int heightSpec, LayoutParams lp) {
+        public boolean shouldMeasureChild(View child, int widthSpec, int heightSpec, LayoutParams lp) {
             return child.isLayoutRequested()
                     || !mMeasurementCacheEnabled
                     || !isMeasurementUpToDate(child.getWidth(), widthSpec, lp.width)
@@ -8287,9 +8306,11 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             widthUsed += insets.left + insets.right;
             heightUsed += insets.top + insets.bottom;
 
-            final int widthSpec = getChildMeasureSpec(getWidth(), getWidthMode(),
-                    getPaddingLeft() + getPaddingRight() +
-                            layoutParams.leftMargin + layoutParams.rightMargin + widthUsed, layoutParams.width,
+            final int widthSpec = getChildMeasureSpec(
+                    getWidth(),//recycleView的宽度
+                    getWidthMode(),
+                    getPaddingLeft() + getPaddingRight() + layoutParams.leftMargin + layoutParams.rightMargin + widthUsed,
+                    layoutParams.width,// item的宽度
                     canScrollHorizontally());
 
             final int heightSpec = getChildMeasureSpec(getHeight(), getHeightMode(),
@@ -9192,7 +9213,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         }
 
         // called by accessibility delegate
-        void onInitializeAccessibilityNodeInfoForItem(View host, AccessibilityNodeInfoCompat info) {
+        public void onInitializeAccessibilityNodeInfoForItem(View host, AccessibilityNodeInfoCompat info) {
             final ViewHolder vh = getChildViewHolderInt(host);
             // avoid trying to create accessibility node info for removed children
             if (vh != null && !vh.isRemoved() && !mChildHelper.isHidden(vh.itemView)) {
@@ -9404,9 +9425,8 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             return properties;
         }
 
-        void setExactMeasureSpecsFrom(RecyclerView recyclerView) {
-            setMeasureSpecs(
-                    MeasureSpec.makeMeasureSpec(recyclerView.getWidth(), MeasureSpec.EXACTLY),
+        public void setExactMeasureSpecsFrom(RecyclerView recyclerView) {
+            setMeasureSpecs(MeasureSpec.makeMeasureSpec(recyclerView.getWidth(), MeasureSpec.EXACTLY),
                     MeasureSpec.makeMeasureSpec(recyclerView.getHeight(), MeasureSpec.EXACTLY)
             );
         }
@@ -9421,11 +9441,11 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
          * This API will be removed after default LayoutManagers properly implement wrap content in
          * non-scroll orientation.
          */
-        boolean shouldMeasureTwice() {
+        public boolean shouldMeasureTwice() {
             return false;
         }
 
-        boolean hasFlexibleChildInBothOrientations() {
+        public boolean hasFlexibleChildInBothOrientations() {
             final int childCount = getChildCount();
             for (int i = 0; i < childCount; i++) {
                 final View child = getChildAt(i);
@@ -9469,7 +9489,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
      */
     public static class LayoutParams extends MarginLayoutParams {
         ViewHolder mViewHolder;
-        final Rect mDecorInsets = new Rect();
+        public final Rect mDecorInsets = new Rect();
         boolean mInsetsDirty = true;
 
         // Flag is set to true if the view is bound while it is detached from RV.

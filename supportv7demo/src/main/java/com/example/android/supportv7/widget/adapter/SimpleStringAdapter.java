@@ -19,6 +19,7 @@ package com.example.android.supportv7.widget.adapter;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -76,14 +77,25 @@ public class SimpleStringAdapter extends RecyclerView.Adapter<SimpleStringAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        final ViewHolder h = new ViewHolder(new TextView(parent.getContext()));
-        h.mTextView.setMinimumHeight(128);
-        h.mTextView.setPadding(20, 0, 20, 0);
-        h.mTextView.setFocusable(true);
-        h.mTextView.setBackgroundResource(mBackground);
-        RecyclerView.LayoutParams lp = getLayoutParams();
-        h.mTextView.setLayoutParams(lp);
-        return h;
+        if(viewType==0){
+            final ViewHolder h = new ViewHolder(new TextView(parent.getContext()));
+            h.mTextView.setMinimumHeight(128);
+            h.mTextView.setPadding(20, 0, 20, 0);
+            h.mTextView.setFocusable(true);
+            h.mTextView.setBackgroundResource(mBackground);
+            RecyclerView.LayoutParams lp = getLayoutParams();
+            h.mTextView.setLayoutParams(lp);
+            return h;
+        }else{
+            final ViewHolder h = new ViewHolder(new TextView(parent.getContext()));
+            h.mTextView.setMinimumHeight(128);
+            h.mTextView.setPadding(20, 0, 20, 0);
+            h.mTextView.setFocusable(true);
+            h.mTextView.setBackgroundResource(mBackground);
+            RecyclerView.LayoutParams lp = getLayoutParams();
+            h.mTextView.setLayoutParams(lp);
+            return h;
+        }
     }
 
     @Override
@@ -98,6 +110,7 @@ public class SimpleStringAdapter extends RecyclerView.Adapter<SimpleStringAdapte
     /**
      * Returns LayoutParams to be used for each item in this adapter. It can be overridden
      * to provide different LayoutParams.
+     *
      * @return LayoutParams to be used for each item in this adapter.
      */
     public RecyclerView.LayoutParams getLayoutParams() {
@@ -113,10 +126,14 @@ public class SimpleStringAdapter extends RecyclerView.Adapter<SimpleStringAdapte
 
     private int getBackgroundColor(int position) {
         switch (position % 4) {
-            case 0: return Color.BLACK;
-            case 1: return Color.RED;
-            case 2: return Color.DKGRAY;
-            case 3: return Color.BLUE;
+            case 0:
+                return Color.BLACK;
+            case 1:
+                return Color.RED;
+            case 2:
+                return Color.DKGRAY;
+            case 3:
+                return Color.BLUE;
         }
         return Color.TRANSPARENT;
     }
@@ -132,5 +149,16 @@ public class SimpleStringAdapter extends RecyclerView.Adapter<SimpleStringAdapte
 
     public void setValues(List<String> values) {
         mValues = values;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (mValues != null) {
+            String value = mValues.get(position);
+            if (!TextUtils.isEmpty(value) && value.equalsIgnoreCase("Acorn")) {
+                return 1;
+            }
+        }
+        return super.getItemViewType(position);
     }
 }

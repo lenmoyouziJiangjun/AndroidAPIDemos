@@ -30,6 +30,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RemoteViews;
 
 /**
  * UI for posting an example notification.
@@ -183,6 +184,7 @@ public class IncomingMessage extends Activity {
                 .setWhen(System.currentTimeMillis())  // the time stamp
                 .setContentTitle(from)  // the label of the entry
                 .setContentText(message)  // the contents of the entry
+//                .setCustomBigContentView(new RemoteViews())
                 .setContentIntent(contentIntent);  // The intent to send when the entry is clicked
 
         // We'll have this notification do the default sound, vibration, and led.

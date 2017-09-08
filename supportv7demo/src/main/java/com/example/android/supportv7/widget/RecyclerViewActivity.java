@@ -75,6 +75,8 @@ public class RecyclerViewActivity extends Activity {
                 });
                 return vh;
             }
+
+
         });
         rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         setContentView(rv);
