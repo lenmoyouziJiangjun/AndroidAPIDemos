@@ -1,4 +1,4 @@
 //include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportotherdemos', ':mediademo', ':commonuidemo', ':commonanimationdemo', ':rxdemo', ':ndkdemo', "supportsource"
-include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportotherdemos', ':mediademo', ':commonuidemo', ':commonanimationdemo', ':rxdemo', ':ndkdemo', ':basedemo', ':commonutils'
+include ':app', ':supportv4demo', ':apidemo', ':supportv7demo', ':supportv13demo', ':supportdesigndemo', ':supportotherdemos', ':mediademo', ':commonuidemo', ':commonanimationdemo', ':rxdemo', ':ndkdemo', ':basedemo', ':commonutils', ':architecturemvvm'
 //, "supportsource"
 
