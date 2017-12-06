@@ -22,5 +22,5 @@
        2、滑动阴影的绘制？ViewGroup重写onDraw的优化？
 
 ####6、使用tips:
-       1、如果RecycleView的大小不睡着adapter变化，设置setHasFiexdSize(true)；这样在measure的时候减少计算。
+       1、如果RecycleView的大小不一样的adapter变化，设置setHasFiexdSize(true)；这样在measure的时候减少计算。
 

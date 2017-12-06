@@ -19,7 +19,9 @@ package com.example.android.apis.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,6 +33,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.android.apis.R;
 
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
 public class WindowFocusObserver extends Activity implements SearchView.OnQueryTextListener {
     TextView mState;
 

@@ -1,11 +1,15 @@
 package com.lll.demo;
 
+import android.app.Application;
+import android.content.Context;
 import android.os.StrictMode;
-import android.support.multidex.MultiDexApplication;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
+import com.lll.demo.utils.DexInstallHelper;
 import com.squareup.leakcanary.LeakCanary;
 
+import java.util.Enumeration;
 import java.util.Properties;
 
 /**
@@ -29,6 +33,7 @@ import java.util.Properties;
  * 5.1: 包太多了(dex文件)，分包的时候会出现找不到某个类的bug
  * 5.2: app启动加载慢。
  * 5.3:优化1：http://blog.csdn.net/DJY1992/article/details/51162061
+ * 5.4：https://github.com/casidiablo/multidex
  * <p>
  * <p>
  * <p>
@@ -41,31 +46,62 @@ import java.util.Properties;
  * <p>
  * copyright generalray4239@gmail.com
  */
-public class DemoApplication extends MultiDexApplication {
+public class DemoApplication extends Application {
+
+    private static final String TAG = "DemoApplication";
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        Log.d(TAG, "onBaseContextAttached start");
+
+        //必须放在前面，解决MultiDex.install安装时间过长导致的黑屏问题。参考自https://github.com/shensky711/MultiDex
+        if (DexInstallHelper.isDexInstallProcess(base)) {
+            Log.d(TAG, "onBaseContextAttached end,isDexInstallProcess直接返回");
+            return;
+        }
+        // if VM has multi dex support, MultiDex support library is disabled
+        if (!DexInstallHelper.isVMMultiDexCapable()) {//如果是davlik虚拟机
+            if (!DexInstallHelper.isMultiDexInstalled(base)) {
+                DexInstallHelper.waitForDexInstall(base);//block当前进程
+            }
+        }
+        long start = System.currentTimeMillis();
+        MultiDex.install(base);
+        Log.d(TAG, "MultiDex.install end: " + (System.currentTimeMillis() - start));
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        if (DexInstallHelper.isDexInstallProcess(this)) {
+            return;
+        }
 
         if (BuildConfig.DEBUG) {
             //增加内存检测
             if (!LeakCanary.isInAnalyzerProcess(this)) {
                 LeakCanary.install(this);
             }
-            testSystemProperty();
 
+            testSystemProperty();
+//
             setStrictMode();
         }
     }
+
 
     /**
      * SystemProperty
      */
     private void testSystemProperty() {
         Properties properties = System.getProperties();
-        while (properties.propertyNames().hasMoreElements()) {
-            Log.i("lll", properties.get(properties.propertyNames().nextElement()).toString());
-        }
+        Enumeration ration= properties.propertyNames();
+//        Object obj= ration.nextElement();
+//        while ( obj !=null) {
+//            obj =ration .nextElement();
+//            Log.i("lll", properties.get(obj) !=null ? properties.get(obj).toString():obj.toString());
+//        }
     }
 
     /**

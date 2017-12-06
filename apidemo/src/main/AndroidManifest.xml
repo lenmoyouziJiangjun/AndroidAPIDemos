@@ -3207,6 +3207,14 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.lll.learn.view.HorizontalScrollViewActivity"
+            android:label="learn/view/HorizontalScrollView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
     <instrumentation android:name=".app.LocalSampleInstrumentation"
