@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion Integer.parseInt("${COMPILE_SDK_VERSION}")
+    buildToolsVersion "${BUILD_TOOLS_VERSION}"
+
     defaultConfig {
-        applicationId "com.lll.demo"
-        minSdkVersion 21
-        targetSdkVersion 25
-        multiDexEnabled true
+        minSdkVersion Integer.parseInt("${MIN_SDK_VERSION}")
+        targetSdkVersion Integer.parseInt("${TARGET_SDK_VERSION}")
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,23 +33,18 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:multidex:1.0.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
     //内存泄漏检测
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    implementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
 //    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
 //    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
-    testCompile 'junit:junit:4.12'
-    compile project(path: ':supportv4demo')
-    compile project(path: ':supportv7demo')
-    compile project(path: ':apidemo')
-    compile project(path: ':supportv13demo')
-    compile project(path: ':supportdesigndemo')
-    compile project(path: ':supportotherdemos')
-    compile project(path: ':mediademo')
-    compile project(path: ':rxdemo')
+    implementation project(path: ':supportv4demo')
+    implementation project(path: ':supportv7demo')
+    implementation project(path: ':apidemo')
+    implementation project(path: ':supportv13demo')
+    implementation project(path: ':supportdesigndemo')
+    implementation project(path: ':supportotherdemos')
+    implementation project(path: ':mediademo')
+    implementation project(path: ':rxdemo')
 }

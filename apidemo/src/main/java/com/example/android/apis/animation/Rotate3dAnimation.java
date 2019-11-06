@@ -86,6 +86,7 @@ public class Rotate3dAnimation extends Animation {
         camera.getMatrix(matrix);
         camera.restore();
 
+        //只能对x,y的移动。需要Z的移动需要用camera
         matrix.preTranslate(-centerX, -centerY);
         matrix.postTranslate(centerX, centerY);
     }

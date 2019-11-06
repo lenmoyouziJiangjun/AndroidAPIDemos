@@ -18,14 +18,21 @@ package com.example.android.apis.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.example.android.apis.R;
 
-
 /**
- * WebView 学习
+ * Version 1.0
+ * Created by lll on 2018/5/2.
+ * Description
+ * <pre>
+ *     web和H5之间的互掉
+ * </pre>
+ * copyright generalray4239@gmail.com
  */
 public class WebView2 extends Activity {
 
@@ -36,15 +43,25 @@ public class WebView2 extends Activity {
         super.onCreate(icicle);
         setContentView(R.layout.webview_1);
 
-        final String mimeType = "text/html";
-
-
         mWebView = (WebView) findViewById(R.id.wv1);
-
+        initWebView();
+        mWebView.loadUrl("file:///android_asset/AndroidH5Learn.html");
     }
 
     private void initWebView() {
         WebSettings settings = mWebView.getSettings();
+        //如果访问的页面中要与Javascript交互，则webview必须设置支持Javascript
+        settings.setJavaScriptEnabled(true);
+        mWebView.addJavascriptInterface(new NativeInterface(),"android");
+    }
+
+
+    public static class NativeInterface{
+
+        @JavascriptInterface
+        public void login(String str){
+            Log.e("lll","调用我的login方法了哟======="+str);
+        }
     }
 
 

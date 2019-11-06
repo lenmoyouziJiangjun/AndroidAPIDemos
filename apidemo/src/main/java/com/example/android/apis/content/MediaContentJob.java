@@ -40,6 +40,7 @@ import java.util.List;
  */
 
 
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class MediaContentJob extends JobService {
     static final Uri MEDIA_URI = Uri.parse("content://" + MediaStore.AUTHORITY + "/");
 
@@ -57,15 +58,17 @@ public class MediaContentJob extends JobService {
 
     /**
      * 开启服务
+     *
      * @param context
      */
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public static void scheduleJob(Context context) {
-        JobScheduler js = context.getSystemService(JobScheduler.class);
+        JobScheduler js =getJobScheduler(context);//JobScheduler.class);
         JobInfo.Builder builder = new JobInfo.Builder(JobIds.MEDIA_CONTENT_JOB,
                 new ComponentName(context, MediaContentJob.class));
-        builder.addTriggerContentUri(new JobInfo.TriggerContentUri(MEDIA_URI,
-                JobInfo.TriggerContentUri.FLAG_NOTIFY_FOR_DESCENDANTS));
-
+//        builder.addTriggerContentUri(new JobInfo.TriggerContentUri(MEDIA_URI,
+//                JobInfo.TriggerContentUri.FLAG_NOTIFY_FOR_DESCENDANTS));
+//
 //        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_NONE); //设置需要的网络条件，默认NETWORK_TYPE_NONE
 //        builder.setPeriodic(3000);//设置间隔时间
 //
@@ -83,7 +86,7 @@ public class MediaContentJob extends JobService {
     }
 
     public static boolean isScheduled(Context context) {
-        JobScheduler js = context.getSystemService(JobScheduler.class);
+        JobScheduler js = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
         List<JobInfo> jobs = js.getAllPendingJobs();
         if (jobs == null) {
             return false;
@@ -96,12 +99,16 @@ public class MediaContentJob extends JobService {
         return false;
     }
 
+
+    private static JobScheduler getJobScheduler(Context context) {
+        return (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+    }
+
     /**
-     *
      * @param context
      */
     public static void cancelJob(Context context) {
-        JobScheduler js = context.getSystemService(JobScheduler.class);
+        JobScheduler js = getJobScheduler(context);
         js.cancel(JobIds.MEDIA_CONTENT_JOB);
     }
 

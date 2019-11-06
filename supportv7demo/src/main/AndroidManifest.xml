@@ -23,10 +23,6 @@
     <!-- Permission for INTERNET is required for streaming video content
          from the web, it's not required otherwise. -->
 
-    <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="21" />
-
     <!-- The smallest screen this app works on is a phone.  The app will
          scale its UI to larger screens but doesn't make good use of them
          so allow the compatibility mode button to be shown (mostly because

@@ -53,7 +53,7 @@ abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<V> {
 
     @Override
     public boolean onInterceptTouchEvent(CoordinatorLayout parent, V child, MotionEvent ev) {
-        if (mTouchSlop < 0) {
+        if (mTouchSlop < 0) {//获取滑动距离
             mTouchSlop = ViewConfiguration.get(parent.getContext()).getScaledTouchSlop();
         }
 

@@ -48,7 +48,7 @@ import java.util.Set;
  * explicit call to set the capacity should turn off this aggressive shrinking behavior.</p>
  */
 public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {
-    MapCollections<K, V> mCollections;
+    MapCollections<K, V> mCollections;L
 
     public ArrayMap() {
         super();

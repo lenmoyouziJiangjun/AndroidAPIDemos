@@ -49,7 +49,7 @@ public class NetworkingActivity extends AppCompatActivity {
                 .getObjectObservable(ApiUser.class)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<ApiUser, User>() {
+                .map(new Function<ApiUser, User>() {//map方法，将一个对象转为一个新的对象
                     @Override
                     public User apply(@NonNull ApiUser apiUser) throws Exception {
                         // here we get ApiUser from server

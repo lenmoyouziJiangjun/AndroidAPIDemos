@@ -3,7 +3,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="LOCAL" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../soft/gradle/gradle-4.1" />
         <option name="modules">
@@ -12,10 +12,13 @@
             <option value="$PROJECT_DIR$/apidemo" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/architecturemvvm" />
-            <option value="$PROJECT_DIR$/basedemo" />
+            <option value="$PROJECT_DIR$/bledemo" />
             <option value="$PROJECT_DIR$/commonanimationdemo" />
             <option value="$PROJECT_DIR$/commonuidemo" />
             <option value="$PROJECT_DIR$/commonutils" />
+            <option value="$PROJECT_DIR$/databinddemo" />
+            <option value="$PROJECT_DIR$/lifecycledemo" />
+            <option value="$PROJECT_DIR$/lllbanner" />
             <option value="$PROJECT_DIR$/mediademo" />
             <option value="$PROJECT_DIR$/ndkdemo" />
             <option value="$PROJECT_DIR$/rxdemo" />
@@ -27,6 +30,7 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

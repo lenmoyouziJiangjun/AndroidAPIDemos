@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2016, The Android Open Source Project
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,9 +27,11 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -39,6 +41,7 @@ import java.util.List;
 /**
  * Example stub job to monitor when there is a change to photos in the media provider.
  */
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class PhotosContentJob extends JobService {
     // The root URI of the media provider, to monitor for generic changes to its content.
     static final Uri MEDIA_URI = Uri.parse("content://" + MediaStore.AUTHORITY + "/");
@@ -48,7 +51,7 @@ public class PhotosContentJob extends JobService {
             = MediaStore.Images.Media.EXTERNAL_CONTENT_URI.getPathSegments();
 
     // The columns we want to retrieve about a particular image.
-    static final String[] PROJECTION = new String[] {
+    static final String[] PROJECTION = new String[]{
             MediaStore.Images.ImageColumns._ID, MediaStore.Images.ImageColumns.DATA
     };
     static final int PROJECTION_ID = 0;
@@ -76,7 +79,8 @@ public class PhotosContentJob extends JobService {
     // Fake job work.  A real implementation would do some work on a separate thread.
     final Handler mHandler = new Handler();
     final Runnable mWorker = new Runnable() {
-        @Override public void run() {
+        @Override
+        public void run() {
             scheduleJob(PhotosContentJob.this);
             jobFinished(mRunningParams, false);
         }
@@ -98,7 +102,7 @@ public class PhotosContentJob extends JobService {
         if (jobs == null) {
             return false;
         }
-        for (int i=0; i<jobs.size(); i++) {
+        for (int i = 0; i < jobs.size(); i++) {
             if (jobs.get(i).getId() == JobIds.PHOTOS_CONTENT_JOB) {
                 return true;
             }
@@ -131,9 +135,9 @@ public class PhotosContentJob extends JobService {
                 ArrayList<String> ids = new ArrayList<>();
                 for (Uri uri : params.getTriggeredContentUris()) {
                     List<String> path = uri.getPathSegments();
-                    if (path != null && path.size() == EXTERNAL_PATH_SEGMENTS.size()+1) {
+                    if (path != null && path.size() == EXTERNAL_PATH_SEGMENTS.size() + 1) {
                         // This is a specific file.
-                        ids.add(path.get(path.size()-1));
+                        ids.add(path.get(path.size() - 1));
                     } else {
                         // Oops, there is some general change!
                         rescanNeeded = true;
@@ -144,7 +148,7 @@ public class PhotosContentJob extends JobService {
                     // If we found some ids that changed, we want to determine what they are.
                     // First, we do a query with content provider to ask about all of them.
                     StringBuilder selection = new StringBuilder();
-                    for (int i=0; i<ids.size(); i++) {
+                    for (int i = 0; i < ids.size(); i++) {
                         if (selection.length() > 0) {
                             selection.append(" OR ");
                         }
@@ -200,7 +204,7 @@ public class PhotosContentJob extends JobService {
         Toast.makeText(this, sb.toString(), Toast.LENGTH_LONG).show();
 
         // We will emulate taking some time to do this work, so we can see batching happen.
-        mHandler.postDelayed(mWorker, 10*1000);
+        mHandler.postDelayed(mWorker, 10 * 1000);
         return true;
     }
 

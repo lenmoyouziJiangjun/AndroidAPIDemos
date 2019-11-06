@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //1、事件注册方式
+        //1、ele.on事件类型= function(){}
+        //2、addEventListener(事件类型,事件处理函数,useCapture)
+        //3、attachEvent(事件类型,事件处理函数)
+
+
+        //2、事件的的三个阶段
+        //1、捕获阶段(从外向内寻找触发事件的元素)
+        //2、目标阶段(找到了触发事件的元素)
+        //3、冒泡阶段(事件从内向外冒泡)
+
+
+        //使用实例
+        window.onload = function () {
+            var div = document.getElementById("login");
+            //方式一
+//            if (div.addEventListener) {//支持这个事件
+//                div.addEventListener("click", function () {
+//                    alert("点你妹啊");
+//                })
+//            } else if (div.attachEvent) {
+//                div.attachEvent("onclick", function () {
+//                    //
+//                    alert("点你哥啊");
+//                });
+//            } else {
+//                div["onclick"] = function () {
+//                    alert("终于点到我了");
+//                }
+//            }
+            //方式二
+//            registerEvent(div,"click",function () {
+//                alert("点到哥哥的弟弟了");
+//            })
+            //方式三:
+            var register=createRegisterEvent();
+            register(div,"click",function () {
+                alert("点到爷爷了");
+                window.android.login("点到爷爷了")
+            });
+        }
+
+        /**
+         * 给target注册事件
+         * @param target dom元素
+         * @param type 事件类型
+         * @param handler 事件处理函数
+         */
+        function registerEvent(target, type, handler) {
+            if (target.addEventListener) {
+               target.addEventListener(type,handler);
+            }else if(target.attachEvent){
+               target.attachEvent("on"+type,handler);
+            }else{
+               target["on"+type]=handler;
+            }
+        }
+
+        /**
+         * 给target注册事件(重复判断的优化)
+         * 存在一个问题就是: 注册的事件的处理函数中的this指向不一样。
+         * 1、使用addEventListener的方式注册点击的事件的回调函数中的this  执行target
+         * 2、使用attachEvent的方式注册点击事件的回调函数中的this 指向window
+         *
+         * 3、2,3种注册事件的方式中,回调函数内获取事件对象的方式也是不一样的
+         * 要让他们统一,在第二种的事件注册方式(attachEvent)中,手动跟handle传递window.event
+         * @param target
+         * @param type
+         * @param handler
+         */
+        function createRegisterEvent() {
+            if (window.addEventListener) {
+                return function (target, type, handler) {
+                    target.addEventListener(type,handler);
+                }
+            }else if(window.attachEvent){
+                return function (target, type, handler) {
+                    target.attachEvent("on"+type,function () {
+                        handler.call(target,window.event);
+                    });
+                }
+            }else{
+                return function (target, type, handler) {
+                    target["on"+type]=handler;
+                }
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+<button id="login"> 调用Native方法</button>
+</body>
+</html>

@@ -5,6 +5,5 @@
     android:viewportHeight="100"
     android:viewportWidth="100" >
   <path
-      android:fillColor="@color/pink"
       android:pathData="@string/heart"/>
 </vector>

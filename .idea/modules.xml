@@ -6,10 +6,13 @@
       <module fileurl="file://$PROJECT_DIR$/apidemo/apidemo.iml" filepath="$PROJECT_DIR$/apidemo/apidemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/architecturemvvm/architecturemvvm.iml" filepath="$PROJECT_DIR$/architecturemvvm/architecturemvvm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basedemo/basedemo.iml" filepath="$PROJECT_DIR$/basedemo/basedemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bledemo/bledemo.iml" filepath="$PROJECT_DIR$/bledemo/bledemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonanimationdemo/commonanimationdemo.iml" filepath="$PROJECT_DIR$/commonanimationdemo/commonanimationdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonuidemo/commonuidemo.iml" filepath="$PROJECT_DIR$/commonuidemo/commonuidemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonutils/commonutils.iml" filepath="$PROJECT_DIR$/commonutils/commonutils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databinddemo/databinddemo.iml" filepath="$PROJECT_DIR$/databinddemo/databinddemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lifecycledemo/lifecycledemo.iml" filepath="$PROJECT_DIR$/lifecycledemo/lifecycledemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lllbanner/lllbanner.iml" filepath="$PROJECT_DIR$/lllbanner/lllbanner.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediademo/mediademo.iml" filepath="$PROJECT_DIR$/mediademo/mediademo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ndkdemo/ndkdemo.iml" filepath="$PROJECT_DIR$/ndkdemo/ndkdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxdemo/rxdemo.iml" filepath="$PROJECT_DIR$/rxdemo/rxdemo.iml" />

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CommonLibrary</string>
+
+
+    <string name="str_today">今天</string>
+    <string name="str_yesterday">昨天</string>
+</resources>

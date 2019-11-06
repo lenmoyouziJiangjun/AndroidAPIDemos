@@ -30,6 +30,8 @@ import java.util.List;
  */
 public final class DirectedAcyclicGraph<T> {
     private final Pools.Pool<ArrayList<T>> mListPool = new Pools.SimplePool<>(10);
+    //模拟一个图结构，Key为节点，value为节点能够到达的节点
+    //一般情况使用矩阵模拟一个图
     private final SimpleArrayMap<T, ArrayList<T>> mGraph = new SimpleArrayMap<>();
 
     private final ArrayList<T> mSortResult = new ArrayList<>();
@@ -155,6 +157,27 @@ public final class DirectedAcyclicGraph<T> {
         return mSortResult;
     }
 
+
+    /**
+     * 广度优先遍历图
+     * @return
+     */
+    ArrayList<T> getSortedListByBFS(){
+        mSortResult.clear();
+        mSortTmpMarked.clear();
+        for(int i=0,size = mGraph.size();i<size;i++){
+            mSortResult.add(mGraph.keyAt(i));
+        }
+        for(int )
+
+    }
+
+    /**
+     * 图表的深度优先遍历：
+     * @param node
+     * @param result
+     * @param tmpMarked
+     */
     private void dfs(final T node, final ArrayList<T> result, final HashSet<T> tmpMarked) {
         if (result.contains(node)) {
             // We've already seen and added the node to the result list, skip...
@@ -176,6 +199,26 @@ public final class DirectedAcyclicGraph<T> {
         tmpMarked.remove(node);
         // Finally add it to the result list
         result.add(node);
+    }
+
+    /**
+     * 广度优先遍历
+     * @param node
+     * @param result
+     * @param tmpMarked
+     */
+    private void bfs(final T node, final ArrayList<T> result, final HashSet<T> tmpMarked){
+        if (result.contains(node)) {
+            // We've already seen and added the node to the result list, skip...
+            return;
+        }
+        if (tmpMarked.contains(node)) {
+            throw new RuntimeException("This graph contains cyclic dependencies");
+        }
+        // Temporarily mark the node
+        tmpMarked.add(node);
+
+
     }
 
     /**
